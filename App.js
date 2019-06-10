@@ -13,12 +13,7 @@ import RNFetchBlob from 'react-native-fetch-blob';
 import RNFS from 'react-native-fs';
 import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -41,8 +36,8 @@ export default class App extends Component<Props> {
   //  this.props.store.memoStore.addItem(visionResp);
     console.log('visionResp', uri);
     const dirs = RNFetchBlob.fs.dirs
-console.log(dirs.DocumentDir)
-console.log(dirs.CacheDir)
+    console.log(dirs.DocumentDir)
+    console.log(dirs.CacheDir)
     const data = await this.camera.takePictureAsync(options);
     let id = String(Number(this.state.id)+1);
     this.setState({id:id});
@@ -51,9 +46,9 @@ console.log(dirs.CacheDir)
     RNFS.copyFile(data.uri, RNFS.PicturesDirectoryPath + '/' + fileName).then(() => {
     console.log("Photo copied locally!!");
     Alert.alert(fileName+' saved');
-}, (error) => {
+    }, (error) => {
     console.log("CopyFile fail for video: " + error);
-});
+     });
 
   } catch (e) {
     console.warn(e);
@@ -79,19 +74,19 @@ console.log(dirs.CacheDir)
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+
         <RNCamera
-  ref={ref => {
-    this.camera = ref;
-  }}
-  autoFocus={RNCamera.Constants.AutoFocus.on}
-  style={{
-    flex: 1,
-    width: '100%',
-  }}
-      >
-        <Button onPress ={this.click} title="click"/>
-        </RNCamera>
+          ref={ref => {
+            this.camera = ref;
+            }}
+            autoFocus={RNCamera.Constants.AutoFocus.on}
+            style={{
+              flex: 1,
+              width: '100%',
+              }}
+          >
+         <Button onPress ={this.click} title="click"/>
+         </RNCamera>
 
       </View>
     );
