@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button,Alert} from 'react-native';
+import {PermissionsAndroid,Platform, StyleSheet, Text, View, Button,Alert} from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import RNFetchBlob from 'react-native-fetch-blob';
 import RNFS from 'react-native-fs';
@@ -20,6 +20,35 @@ export default class App extends Component<Props> {
   state = {
     id: '0'
   }
+// Constructor(){
+  // this.requestStoragePermission();
+  // PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE)
+ //}
+
+ /* requestStoragePermission =  async () => {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.CAMERA,
+      {
+        title: 'Cool Photo App Camera Permission',
+        message:
+          'Cool Photo App needs access to your camera ' +
+          'so you can take awesome pictures.',
+        buttonNeutral: 'Ask Me Later',
+        buttonNegative: 'Cancel',
+        buttonPositive: 'OK',
+      },
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log('You can use the camera');
+    } else {
+      console.log('Camera permission denied');
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+} */
+
   click = async () => {
   //Alert.alert("te1t");
 //  const { memoStore } = this.props.store;
