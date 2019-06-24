@@ -3,6 +3,7 @@ package com.testcam;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.fetchsky.RNTextDetector.RNTextDetectorPackage;
 import com.rnfs.RNFSPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import org.reactnative.camera.RNCameraPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNTextDetectorPackage(),
             new RNFSPackage(),
             new RNFetchBlobPackage(),
             new RNCameraPackage()

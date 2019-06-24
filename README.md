@@ -19,3 +19,27 @@ React Native camera to click and save photos to gallery
 react-native link react-native-text-detector `
 
 permissions: AndroidManifest.xml
+
+issues with new google library update fix:. -> has to be done till library owner provides fix
+
+Goto node files ` react-native-text-detector \andrid\build.graddle `
+`   dependencies {
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-ml-vision:19.0.3'
+    implementation 'com.facebook.react:react-native:+'
+} `
+
+` android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+} `

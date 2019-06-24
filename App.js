@@ -12,7 +12,7 @@ import { RNCamera } from 'react-native-camera';
 import RNFetchBlob from 'react-native-fetch-blob';
 import RNFS from 'react-native-fs';
 import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
-
+import RNTextDetector from 'react-native-text-detector';
 
 
 type Props = {};
@@ -61,9 +61,9 @@ export default class App extends Component<Props> {
       skipProcessing: true,
     };
     const { uri } = await this.camera.takePictureAsync(options);
-  //  const visionResp = await RNTextDetector.detectFromUri(uri);
+    const visionResp = await RNTextDetector.detectFromUri(uri);
   //  this.props.store.memoStore.addItem(visionResp);
-    console.log('visionResp', uri);
+    console.log('visionResp', visionResp);
     const dirs = RNFetchBlob.fs.dirs
     console.log(dirs.DocumentDir)
     console.log(dirs.CacheDir)
