@@ -24,17 +24,14 @@ issues with new google library update fix:. -> has to be done till library owner
 
 Goto node files ` react-native-text-detector \andrid\build.graddle `
 
-
-` 
+``` 
   dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-ml-vision:19.0.3'
     implementation 'com.facebook.react:react-native:+'
-} 
-`
 
-` 
    android {
+   
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
 
@@ -48,4 +45,5 @@ Goto node files ` react-native-text-detector \andrid\build.graddle `
         abortOnError false
     }
 } 
-`
+
+```
