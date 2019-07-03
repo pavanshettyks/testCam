@@ -23,6 +23,22 @@ React Native camera to click and save photos to gallery
 
 permissions: AndroidManifest.xml
 
+goto app -> build.gradle add   `packagingOptions`
+
+```
+android {
+
+    compileOptions {
+        ...
+    }
+
+    packagingOptions {
+      exclude 'META-INF/androidx.exifinterface_exifinterface.version'
+      exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+    defaultConfig {
+```
 issues with new google library update fix:. -> has to be done till library owner provides fix
 
 Goto node files ` react-native-text-detector \andrid\build.graddle `
